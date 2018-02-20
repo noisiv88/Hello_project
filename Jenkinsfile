@@ -1,5 +1,3 @@
-#!/usr/bin/env groovy
-
 pipeline {
     agent any
 
@@ -7,8 +5,10 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-		javac Hello.java
-		java Hello
+		sh """
+		    javac Hello.java
+		    java Hello
+		"""
             }
         }
         stage('Test') {
