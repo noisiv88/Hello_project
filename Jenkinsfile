@@ -7,7 +7,6 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-		cd /home/jenkins/JavaProject
 		javac Hello.java
 		java Hello
             }
